@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup Form</title>
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="app.js"></script>
@@ -14,38 +15,54 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="content-form">
-        <div class="titleWrapper">
+      <div id="signup-form-wrapper"">
+
+        <div class="signup-header">
           <h1>Pets's friends</h1>
           <p>Create your account in a second!</p>
           <p>Sign Up</p>
         </div>
 
-        <form class="formWrapper">
-          <div class="inputWrapper">
-            <input type="email" placeholder="Your email" class="inputEmail" />
-          </div>
-
-          <div class="inputWrapper">
+        <form class="signup-form">
+          <div class="field-form">
             <input
+              id="email"
+              class="email-field"
+              type="email"
+              placeholder="Your email"
+              required
+              pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+            />
+            <span class="error-message"></span>
+          </div>
+          <div  class="field-form">
+            <input
+              id="password"
+              class="password-field"
               type="password"
               placeholder="Password"
-              class="inputPassword"
+              required
+              minlength="6"
+              pattern="[A-Za-z0-9]{6,}"
             />
+            <span class="error-message"></span>
           </div>
 
-          <div class="checkboxWrapper">
-            <input type="checkbox" class="inputCheck error" />
-            <label for="check">* I agree with the Privacy Policy</label>
+          <div  class="field-checkbox">
+            <input id="check" class="check-field" type="checkbox" required />
+            <span> *I agree with the Privacy Policy</span>
+            <span class="error-message"></span>
           </div>
-          <div class="content-error"></div>
-          <button class="btn-create" type="submit">Create an account</button>
+
+          <button class="signup-button" type="submit" value="Create" disabled>
+            Create an account
+          </button>
         </form>
       </div>
 
-      <div class="content-image">
-        <img src="image/background-dog.jpg" alt="background-dog" />
+
+      <div id="image-wrapper"">
+        <img src="image/background-dog.jpg" alt="Background image of a dog"" />
       </div>
     </div>
   </body>
